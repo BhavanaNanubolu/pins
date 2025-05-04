@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<style>
+    body{
+    background-image: url("static/resources/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    }
+</style>
+<body>
+    <form method="POST" action="/">
+        <h1>Login</h1>
+
+        <!-- Updated field for mobile number -->
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>        
+    {% endif %} 
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="{{ url_for('static', filename='resources/img.png') }}" alt="Login Illustration" style="max-width: 100%; height: auto;">
+    </div>
+</body>
+</html>

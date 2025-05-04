@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scenario-Based Questions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<style>
+    body{
+    background-image: url("static/resources/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    }
+    form{
+        background: #bbd0d8;
+        background-position: center;
+        background-size: cover;
+    }
+  </style>
+<body>
+    <div class="container">
+        <form action="/submit_scenario" method="post">
+            <h1>Scenario-Based Questions</h1>
+
+            <label for="question1"><p><strong>You receive sudden feedback that your work does not meet expectations during a critical project review. The timeline is tight, and revisions are required. How do you react and handle the situation?</strong></p></label>
+            <textarea id="question1" name="question1" rows="4"></textarea>
+
+            <label for="question2"><p><strong>You face an unexpected financial emergency that requires immediate action, such as paying for a medical expense or a car repair. You have limited savings. How do you cope?</strong></p>
+            </label>
+            <textarea id="question2" name="question2" rows="4"></textarea>
+
+            <label for="question3"><p><strong>You made a significant mistake in a high-pressure situation, and it caused issues for your team. How do you process your feelings and handle the aftermath?</strong></p>
+            </label>
+            <textarea id="question3" name="question3" rows="4"></textarea>
+
+            <label for="question4"><p><strong>You have recently moved to a new city for work or studies where you do not know anyone. It feels isolating, and you miss home. How do you adapt?</strong></p>
+            </label>
+            <textarea id="question4" name="question4" rows="4"></textarea>
+
+            <label for="question5"><p><strong>You have worked hard for months on a project or goal, but it falls short of expectations. How do you handle the situation?</strong></p>
+            </label>
+            <textarea id="question5" name="question5" rows="4"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+

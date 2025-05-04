@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Questions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<style>
+    body{
+    background-image: url("static/resources/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    }
+    
+  </style>
+<body>
+    <form method="POST">
+        <h2>Detailed Questions About Mental Health</h2>
+
+            <h3>1. Overall, how would you rate your physical health (out of 10)?</h3>
+                <input type="number" id="Physical Health (1-10)" name="Physical_Health" min="1" max="10" required>
+            
+                <h3>2. Overall, how would you rate your mental health (out of 10)?</h3>
+                <input type="number" id="Mental Health (1-10)" name="Mental_Health" min="1" max="10" required>
+            
+                <h3>3. During the past 4 weeks, have you had any problems with your work or daily life due to your physical health?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Work_Problems_Physical', this, 'Never')">Never</button>
+                <button type="button" class="option-button" onclick="selectOption('Work_Problems_Physical', this, 'Rarely')">Rarely</button>
+                <button type="button" class="option-button" onclick="selectOption('Work_Problems_Physical', this, 'Sometimes')">Sometimes</button>
+                <button type="button" class="option-button" onclick="selectOption('Work_Problems_Physical', this, 'Often')">Often</button>
+                <input type="hidden" id="Work Problems (Physical)" name="Work_Problems_Physical" value="" required>
+            
+                <h3>4. During the past 4 weeks, have you had any problems with your work or daily life due to emotional problems such as depression, sadness, anxiety, etc.?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Work_Problems_Emotional',this, 'Never')">Never</button>
+                <button type="button" class="option-button" onclick="selectOption('Work_Problems_Emotional', this, 'Rarely')">Rarely</button>
+                <button type="button" class="option-button" onclick="selectOption('Work_Problems_Emotional',this,  'Sometimes')">Sometimes</button>
+                <button type="button" class="option-button" onclick="selectOption('Work_Problems_Emotional',this,  'Often')">Often</button>
+                <input type="hidden" id="Work Problems (Emotional)" name="Work_Problems_Emotional" value="" required>
+
+                <h3>5. Have you felt particularly low or down for 1 week in a row?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Felt_Low',this,  'Yes')">Yes</button>
+                <button type="button" class="option-button" onclick="selectOption('Felt_Low',this,  'No')">No</button>
+                <button type="button" class="option-button" onclick="selectOption('Felt_Low',this,  'Not sure')">Not sure</button>
+                <button type="button" class="option-button" onclick="selectOption('Felt_Low',this,  'Prefer not to say')">Prefer not to say</button>
+                <input type="hidden" id="Felt Low for a Week" name="Felt_Low" value="" required>
+
+                <h3>7. Have you noticed any changes in your diet?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Diet_Changes',this,  'No changes')">No changes</button>
+                <button type="button" class="option-button" onclick="selectOption('Diet_Changes', this, 'Eating more than usual')">Eating more than usual</button>
+                <button type="button" class="option-button" onclick="selectOption('Diet_Changes',this,  'Eating less than usual')">Eating less than usual</button>
+                <button type="button" class="option-button" onclick="selectOption('Diet_Changes', this, 'Irregular eating patterns')">Irregular eating patterns</button>
+                <input type="hidden" id="Diet Changes" name="Diet_Changes" value="" required>
+
+                <h3>8. When was the last time you were really happy?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Last_Time_Happy',this,  'Within the past week')">Within the past week</button>
+                <button type="button" class="option-button" onclick="selectOption('Last_Time_Happy', this, 'Within the past month')">Within the past month</button>
+                <button type="button" class="option-button" onclick="selectOption('Last_Time_Happy',this,  'More than a month ago')">More than a month ago</button>
+                <button type="button" class="option-button" onclick="selectOption('Last_Time_Happy', this, 'I can’t remember')">I can’t remember</button>
+                <input type="hidden" id="Last Time Happy" name="Last_Time_Happy" value="" required>
+
+                <h3>9. Have you ever been diagnosed with a mental disorder before?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Mental_Disorder_Diagnosis',this,  'Yes')">Yes</button>
+                <button type="button" class="option-button" onclick="selectOption('Mental_Disorder_Diagnosis',this,  'No')">No</button>
+                <button type="button" class="option-button" onclick="selectOption('Mental_Disorder_Diagnosis',this,  'Not sure')">Not sure</button>
+                <button type="button" class="option-button" onclick="selectOption('Mental_Disorder_Diagnosis', this, 'Prefer not to say')">Prefer not to say</button>
+                <input type="hidden" id="Mental Disorder Diagnosis" name="Mental_Disorder_Diagnosis" value="" required>
+
+                <h3>10. Is there a history of mental disorder in your family?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Family_History_Mental_Disorder',this,  'Yes')">Yes</button>
+                <button type="button" class="option-button" onclick="selectOption('Family_History_Mental_Disorder',this,  'No')">No</button>
+                <button type="button" class="option-button" onclick="selectOption('Family_History_Mental_Disorder',this,  'Not sure')">Not sure</button>
+                <button type="button" class="option-button" onclick="selectOption('Family_History_Mental_Disorder', this, 'Prefer not to say')">Prefer not to say</button>
+                <input type="hidden" id="Family History of Mental Disorder" name="Family_History_Mental_Disorder" value="" required>
+
+                <h3>11. How is your quality of sleep?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Quality_of_Sleep',this,  'Excellent')">Excellent</button>
+                <button type="button" class="option-button" onclick="selectOption('Quality_of_Sleep',this,  'Good')">Good</button>
+                <button type="button" class="option-button" onclick="selectOption('Quality_of_Sleep',this,  'Poor')">Poor (less than 6 hours, disturbed)</button>
+                <button type="button" class="option-button" onclick="selectOption('Quality_of_Sleep',this,  'Very poor')">Very poor (insomnia or severe disturbances)</button>
+                <input type="hidden" id="Quality of Sleep" name="Quality_of_Sleep" value="" required>
+
+                <h3>12. How often do you drink or smoke?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Drink_Smoke_Frequency',this,  'Never')">Never</button>
+                <button type="button" class="option-button" onclick="selectOption('Drink_Smoke_Frequency',this,  'Occasionally (social settings)')">Occasionally (social settings)</button>
+                <button type="button" class="option-button" onclick="selectOption('Drink_Smoke_Frequency', this, 'Regularly (once a week or more)')">Regularly (once a week or more)</button>
+                <button type="button" class="option-button" onclick="selectOption('Drink_Smoke_Frequency',this,  'Frequently (daily or multiple times a day)')">Frequently (daily or multiple times a day)</button>
+                <input type="hidden" id="Drink/Smoke Frequency" name="Drink_Smoke_Frequency" value="" required>
+
+                <h3>13. Are you going through a tough emotional situation?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Tough_Emotional_Situation', this, 'Yes, currently')">Yes, currently</button>
+                <button type="button" class="option-button" onclick="selectOption('Tough_Emotional_Situation',this,  'Not currently, but recently')">Not currently, but recently</button>
+                <button type="button" class="option-button" onclick="selectOption('Tough_Emotional_Situation',this,  'No')">No</button>
+                <button type="button" class="option-button" onclick="selectOption('Tough_Emotional_Situation',this,  'Prefer not to say')">Prefer not to say</button>
+                <input type="hidden" id="Tough Emotional Situation" name="Tough_Emotional_Situation" value="" required>
+
+                <h3>14. Are you distracted by things easily?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Easily_Distracted',this,  'Never')">Never</button>
+                <button type="button" class="option-button" onclick="selectOption('Easily_Distracted',this,  'Sometimes')">Sometimes</button>
+                <button type="button" class="option-button" onclick="selectOption('Easily_Distracted', this, 'Often')">Often</button>
+                <button type="button" class="option-button" onclick="selectOption('Easily_Distracted',this,  'Almost always')">Almost always</button>
+                <input type="hidden" id="Easily Distracted" name="Easily_Distracted" value="" required>
+
+                <h3>15. Are you being harsh on yourself or overly self-critical?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Self_Critical',this,  'Never')">Never</button>
+                <button type="button" class="option-button" onclick="selectOption('Self_Critical',this,  'Sometimes')">Sometimes</button>
+                <button type="button" class="option-button" onclick="selectOption('Self_Critical',this,  'Often')">Often</button>
+                <button type="button" class="option-button" onclick="selectOption('Self_Critical',this,  'Almost always')">Almost always</button>
+                <input type="hidden" id="Self-Critical" name="Self_Critical" value="" required>
+
+                <h3>16. Headaches, cramps, aches, or pains in recent times?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Headaches_Aches',this,  'Never')">Never</button>
+                <button type="button" class="option-button" onclick="selectOption('Headaches_Aches',this,  'Occasionally')">Occasionally</button>
+                <button type="button" class="option-button" onclick="selectOption('Headaches_Aches',this,  'Often')">Often</button>
+                <button type="button" class="option-button" onclick="selectOption('Headaches_Aches', this, 'Always')">Always</button>
+                <input type="hidden" id="Headaches/Aches" name="Headaches_Aches" value="" required>
+
+                <h3>17. Loss of interest in things you previously found enjoyable?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Loss_of_Interest',this,  'Never')">Never</button>
+                <button type="button" class="option-button" onclick="selectOption('Loss_of_Interest', this, 'Occasionally')">Occasionally</button>
+                <button type="button" class="option-button" onclick="selectOption('Loss_of_Interest',this,  'Often')">Often</button>
+                <button type="button" class="option-button" onclick="selectOption('Loss_of_Interest',this,  'Always')">Always</button>
+                <input type="hidden" id="Loss of Interest" name="Loss_of_Interest" value="" required>
+
+                <h3>18. Feeling angry, irritable, or frustrated even over small things?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Feeling_Angry_Irritable',this,  'Never')">Never</button>
+                <button type="button" class="option-button" onclick="selectOption('Feeling_Angry_Irritable',this,  'Sometimes')">Sometimes</button>
+                <button type="button" class="option-button" onclick="selectOption('Feeling_Angry_Irritable',this,  'Often')">Often</button>
+                <button type="button" class="option-button" onclick="selectOption('Feeling_Angry_Irritable',this,  'Almost always')">Almost always</button>
+                <input type="hidden" id="Feeling Angry/Irritable" name="Feeling_Angry_Irritable" value="" required>
+
+                <h3>19. Are you feeling bad about yourself?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Feeling_Bad_About_Self',this,  'Never')">Never</button>
+                <button type="button" class="option-button" onclick="selectOption('Feeling_Bad_About_Self', this, 'Sometimes')">Sometimes</button>
+                <button type="button" class="option-button" onclick="selectOption('Feeling_Bad_About_Self',this,  'Often')">Often</button>
+                <button type="button" class="option-button" onclick="selectOption('Feeling_Bad_About_Self',this,  'Always')">Always</button>
+                <input type="hidden" id="Feeling Bad About Self" name="Feeling_Bad_About_Self" value="" required>
+
+                <h3>20. Are you currently experiencing anxiety, panic attacks, or have any phobias?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Anxiety_Phobias',this,  'Never')">Never</button>
+                <button type="button" class="option-button" onclick="selectOption('Anxiety_Phobias',this,  'Occasionally')">Occasionally</button>
+                <button type="button" class="option-button" onclick="selectOption('Anxiety_Phobias', this, 'Often')">Often</button>
+                <button type="button" class="option-button" onclick="selectOption('Anxiety_Phobias',this,  'Always')">Always</button>
+                <input type="hidden" id="Anxiety or Phobias" name="Anxiety_Phobias" value="" required>
+
+                <h3>21. Have you noticed any significant mood swings recently?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Mood_Swings1',this,  'Never')">Never</button>
+                <button type="button" class="option-button" onclick="selectOption('Mood_Swings1',this,  'Occasionally')">Occasionally</button>
+                <button type="button" class="option-button" onclick="selectOption('Mood_Swings1',this,  'Often')">Often</button>
+                <button type="button" class="option-button" onclick="selectOption('Mood_Swings1', this, 'Always')">Always</button>
+                <input type="hidden" id="Mood Swings.1" name="Mood_Swings1" value="" required>
+
+                <h3>22. Do you feel supported by the people around you?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Support_from_Others',this,  'Always')">Always</button>
+                <button type="button" class="option-button" onclick="selectOption('Support_from_Others',this,  'Sometimes')">Sometimes</button>
+                <button type="button" class="option-button" onclick="selectOption('Support_from_Others',this,  'Rarely')">Rarely</button>
+                <button type="button" class="option-button" onclick="selectOption('Support_from_Others',this,  'Never')">Never</button>
+                <input type="hidden" id="Support from Others" name="Support_from_Others" value="" required>
+
+                <h3>23. Are you satisfied with your current life?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Life_Satisfaction',this,  'Very satisfied')">Very satisfied</button>
+                <button type="button" class="option-button" onclick="selectOption('Life_Satisfaction', this, 'Somewhat satisfied')">Somewhat satisfied</button>
+                <button type="button" class="option-button" onclick="selectOption('Life_Satisfaction',this,  'Neutral')">Neutral</button>
+                <button type="button" class="option-button" onclick="selectOption('Life_Satisfaction', this, 'Dissatisfied')">Dissatisfied</button>
+                <input type="hidden" id="Life Satisfaction" name="Life_Satisfaction" value="" required>
+
+                <h3>24. Do you feel guilty or regret about past things?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Guilt_Regret',this,  'Never')">Never</button>
+                <button type="button" class="option-button" onclick="selectOption('Guilt_Regret',this,  'Occasionally')">Occasionally</button>
+                <button type="button" class="option-button" onclick="selectOption('Guilt_Regret', this, 'Often')">Often</button>
+                <button type="button" class="option-button" onclick="selectOption('Guilt_Regret',this,  'Always')">Always</button>
+                <input type="hidden" id="Guilt/Regret" name="Guilt_Regret" value="" required>
+
+                <h3>25. Are you trying to meet other people's expectations?</h3>
+                <button type="button" class="option-button" onclick="selectOption('Meeting_Expectations',this,  'No, not at all')">No, not at all</button>
+                <button type="button" class="option-button" onclick="selectOption('Meeting_Expectations',this,  'A little')">A little</button>
+                <button type="button" class="option-button" onclick="selectOption('Meeting_Expectations',this,  'A lot')">A lot</button>
+                <button type="button" class="option-button" onclick="selectOption('Meeting_Expectations',this,  'Completely')">Completely</button>
+                <input type="hidden" id="Meeting Expectations" name="Meeting_Expectations" value="" required>
+            </div>
+            
+
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        function selectOption(hiddenInputId, selectedBtn, value) {
+            // Update the hidden input field with the selected value
+            document.getElementById(hiddenInputId).value = value;
+
+            // Remove the 'selected' class from all sibling buttons
+            const buttons = selectedBtn.parentElement.querySelectorAll('.option-button');
+            buttons.forEach(btn => btn.classList.remove('selected'));
+
+            // Add the 'selected' class to the clicked button
+            selectedBtn.classList.add('selected');
+        }
+    </script>
+</body>
+</html>

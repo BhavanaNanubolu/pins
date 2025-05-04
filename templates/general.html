@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Questions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<style>
+    body{
+    background-image: url("static/resources/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    }
+    form{
+        background: #bbd0d8;
+        background-position: center;
+        background-size: cover;
+    }
+
+  </style>
+
+
+<body>
+    
+    <form method="POST">
+        
+        <h2>General Questions</h2>
+        <fieldset>
+            <label for="Age">Age:</label>
+            <input type="number" id="Age" name="Age" placeholder="Enter your age" required>
+            
+            <label for="Gender">Gender:</label>
+            <select id="Gender" name="Gender" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <label for="Sleep">Sleep (hours):</label>
+            <input type="number" step="0.1" id="Sleep" name="Sleep" placeholder="Enter sleep hours" required>
+            
+            <label for="Self Employed">Self Employed:</label>
+            <select id="Self Employed" name="Self_Employed" required>
+                <option value="" disabled selected>Are you self-employed?</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="Financial Stress">Financial stress:</label>
+            <select id="Financial Stress" name="Financial_Stress" required>
+                <option value="" disabled selected>Your Financial stress.</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <label for="Work Pressure">Work Pressure:</label>
+            <input type="number" id="Work Pressure" name="Work_Pressure" placeholder="Rate work pressure on a scale of 1-10" required>
+            
+            <label for="Mood Swings">Mood Swings:</label>
+            <input type="number" id="Mood Swings" name="Mood_Swings" placeholder="Rate mood swings on a scale of 1-10" required>
+            
+            <label for="Family History">Family History:</label>
+            <select id="Family History" name="Family_History" required>
+                <option value="" disabled selected>Does your family have a history of conditions?</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        
+        <label for="AlcohoL&Drug Consumption">Alcohol & Drug Consumption:</label>
+        <select id="Alcohol&Drug Consumption" name="Alcohol_Drug" required>
+            <option value="" disabled selected>Rate alcohol & drug consumption</option>
+            <option value="None">None</option>
+            <option value="Moderate">Moderate</option>
+            <option value="High">High</option>
+        </select>
+        
+        <label for="Friendly Co-Workers">Friendly Co-Workers:</label>
+        <select id="Friendly Co-Workers" name="Friendly_CoWorkers" required>
+            <option value="" disabled selected>Do you have friendly co-workers?</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        </fieldset>
+        
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>
