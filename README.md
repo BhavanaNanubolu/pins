@@ -1,6 +1,6 @@
 **🧠 Finding Psychological Instability using AI/ML**
-**📌 Overview
-**
+
+**📌 Overview**
 
 This project is a web-based application designed to detect psychological instability using Machine Learning and Natural Language Processing techniques. It analyzes user responses from structured forms and scenario-based inputs to assess mental health conditions and provide meaningful feedback.
 
@@ -11,8 +11,8 @@ NLP-based text analysis (TF-IDF + Classification)
 AI-powered chatbot for mental health support
 SMS notification system using Twilio
 User-friendly web interface using Flask
-**🛠️ Technologies Used
-**
+
+**🛠️ Technologies Used**
 Python
 Flask
 Scikit-learn
@@ -21,8 +21,8 @@ HTML, CSS
 Google Generative AI API
 Twilio API
 
-**📂 Project Structure
-**├── model.py
+**📂 Project Structure**
+├── model.py
 ├── app.py
 ├── mental_health_rf_model.pkl
 ├── text_rf_model.pkl
@@ -36,8 +36,8 @@ Twilio API
 │   └── index.html
 └── README.md
 
-**⚙️ Installation & Setup
-**Step 1: Install Python
+**⚙️ Installation & Setup**
+Step 1: Install Python
 
 Ensure Python 3.x is installed.
 Download from: https://www.python.org
@@ -53,12 +53,10 @@ Step 4: Configure API Keys
 
 Edit app.py and add your credentials:
 
-**# Google Generative AI
-**
+**# Google Generative AI**
 genai.configure(api_key="YOUR_GOOGLE_API_KEY")
 
-**# Twilio
-**
+**# Twilio**
 TWILIO_ACCOUNT_SID = "YOUR_ACCOUNT_SID"
 TWILIO_AUTH_TOKEN = "YOUR_AUTH_TOKEN"
 Step 5: Run the Application
@@ -68,8 +66,7 @@ Step 6: Open in Browser
 Go to:
 
 http://127.0.0.1:5000
-**🔐 Test Credentials
-**
+**🔐 Test Credentials**
 Mobile Number: phone_number(XXXXXXXXXX)
 Password: password123
 🧠 How It Works
@@ -93,10 +90,8 @@ Optional chatbot support available
 Users can interact with an AI-powered chatbot for mental health support by visiting:
 
 /index
-**🎯 Outcome
-**
+**🎯 Outcome**
 This system helps in early detection of psychological instability by analyzing behavioral patterns and textual inputs, enabling proactive mental health support.
 
-**⚠️ Disclaimer
-**
+**⚠️ Disclaimer**
 This project is for educational purposes only and should not be considered a substitute for professional medical advice.
