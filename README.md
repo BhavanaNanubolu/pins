@@ -92,22 +92,33 @@ http://127.0.0.1:5000
 **🔐 Test Credentials**
 Mobile Number: phone_number(XXXXXXXXXX)
 Password: password123
-🧠 How It Works
+**🧠 How It Works**
 🔹 Step 1: User Input
 
 User logs in and completes a 3-stage assessment:
 
 General Information
+
 HR-Based Questions
+
 Scenario-Based Questions
+
 🔹 Step 2: Model Processing
+
 HR Inputs → Label Encoding → Random Forest Model
+
 Scenario Text → TF-IDF → Text Classification Model
+
 Combined output determines mental state
+
 🔹 Step 3: Result & Feedback
+
 Prediction displayed on result page
+
 SMS sent to user via Twilio
+
 Optional chatbot support available
+
 🤖 Chatbot Feature
 
 Users can interact with an AI-powered chatbot for mental health support by visiting:
