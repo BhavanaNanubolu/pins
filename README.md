@@ -6,34 +6,57 @@ This project is a web-based application designed to detect psychological instabi
 
 **🚀 Features**
 Multi-stage psychological assessment
+
 Machine Learning-based prediction (Random Forest)
+
 NLP-based text analysis (TF-IDF + Classification)
+
 AI-powered chatbot for mental health support
+
 SMS notification system using Twilio
+
 User-friendly web interface using Flask
 
 **🛠️ Technologies Used**
 Python
+
 Flask
+
 Scikit-learn
+
 Natural Language Processing (TF-IDF)
+
 HTML, CSS
+
 Google Generative AI API
+
 Twilio API
 
 **📂 Project Structure**
 ├── model.py
+
 ├── app.py
+
 ├── mental_health_rf_model.pkl
+
 ├── text_rf_model.pkl
+
 ├── tfidf_vectorizer.pkl
+
 ├── templates/
+
 │   ├── login.html
+
 │   ├── general.html
+
 │   ├── hr.html
+
 │   ├── scenario.html
+
 │   ├── result.html
+
 │   └── index.html
+
 └── README.md
 
 **⚙️ Installation & Setup**
