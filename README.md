@@ -1,6 +1,7 @@
 **🧠 Finding Psychological Instability using AI/ML**
 **📌 Overview
 **
+
 This project is a web-based application designed to detect psychological instability using Machine Learning and Natural Language Processing techniques. It analyzes user responses from structured forms and scenario-based inputs to assess mental health conditions and provide meaningful feedback.
 
 **🚀 Features**
